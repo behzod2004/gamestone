@@ -12,6 +12,18 @@ for (let i = 0; i < 10; i++) {
     table.appendChild(tr);
 }
 // TD END
+function clearTd(){
+    for(let i=0;i<tdarr.length;i++){
+        if(tdarr[i].classList.contains('active')){
+            tdarr[i].classList.remove('active')
+            emoji[i].innerText=''
+        }else if(tdarr[i].classList.contains('noactive')){
+            tdarr[i].classList.remove('noactive')
+            emoji[i].innerText=''
+        }
+    }
+}
+
 // RANDOM ARRAY START
 const tdarr = document.querySelectorAll('td');
 let arr = [];
@@ -84,17 +96,7 @@ for(let i=0;i< startbutton.length;i++){
     bggren.innerText = 0;
     redcount = 0;
     count = 0;
-        // TD CLASS REMOVE START
-    for(let i=0;i<tdarr.length;i++){
-        if(tdarr[i].classList.contains('active')){
-            tdarr[i].classList.remove('active')
-            emoji[i].innerText=''
-        }else if(tdarr[i].classList.contains('noactive')){
-            tdarr[i].classList.remove('noactive')
-            emoji[i].innerText=''
-        }
-    }
-    // TD CLASS REMOVE END
+    clearTd();
     green.innerText = `you found 💎:${count}`;
     red.innerText = `you found 💣:${redcount}`;
     // TIMER START
@@ -121,5 +123,5 @@ for(let i=0;i< startbutton.length;i++){
     })
     // INTERVAL END
 }
-    
+
 
