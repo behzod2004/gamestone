@@ -1,8 +1,9 @@
 //TD START
 let table = document.querySelector('.table');
-for (let i = 0; i < 10; i++) {
+function createTd (){
+    for (let i = 0; i < 10; i++) {
     let tr = document.createElement('tr');
-    for (let j = 0; j < 10; j++) {
+    for (let j = 0; j < 8; j++) {
         let td = document.createElement('td');
         let p = document.createElement('p');
         p.classList.add('emoji');
@@ -11,6 +12,8 @@ for (let i = 0; i < 10; i++) {
     }
     table.appendChild(tr);
 }
+}
+createTd();
 // TD END
 function clearTd(){
     for(let i=0;i<tdarr.length;i++){
@@ -31,9 +34,9 @@ let k = 10;
 function random(k){
     arr = []
     for (let i = 0; i < k; i++) {
-        let a = Math.floor(Math.random() * 100);
+        let a = Math.floor(Math.random() * 80);
         if (arr.includes(a)) {
-            a = Math.floor(Math.random() * 100);
+            a = Math.floor(Math.random() * 80);
         }
         arr.push(a);
     }
@@ -69,7 +72,7 @@ for (let i = 0; i < tdarr.length; i++) {
     })
 }
 // TD CLICK END
-let n=30;
+let n=15;
 let secund = document.querySelector('.sekund');
 let bgred = document.querySelector('.bg-red');
 let bggren = document.querySelector('.bg-gren');
@@ -108,9 +111,9 @@ for(let i=0;i< startbutton.length;i++){
             bgtop.classList.add('active');
             bgbottom.classList.add('active');
             starttext.classList.remove('active');
-        }, 30000);
+        }, 15000);
     // TIMER END
-        n=30
+        n=15
     // INTERVAL START
       var intervalId =  setInterval(function() {
             if(n>0){
