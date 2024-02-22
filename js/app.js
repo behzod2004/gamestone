@@ -111,7 +111,7 @@ for(let i=0;i< startbutton.length;i++){
             bgtop.classList.add('active');
             bgbottom.classList.add('active');
             starttext.classList.remove('active');
-        }, 15000);
+        }, 20000);
     // TIMER END
         n=15
     // INTERVAL START
