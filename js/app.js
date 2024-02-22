@@ -72,7 +72,7 @@ for (let i = 0; i < tdarr.length; i++) {
     })
 }
 // TD CLICK END
-let n=15;
+let n=20;
 let secund = document.querySelector('.sekund');
 let bgred = document.querySelector('.bg-red');
 let bggren = document.querySelector('.bg-gren');
@@ -83,6 +83,7 @@ const bgtop = document.querySelector('.bg-top')
 const bgbottom = document.querySelector('.bg-bottom')
 const startbutton = document.querySelectorAll('.start-button')
 const starttext = document.querySelector('.start-text')
+
 // START-BTN START
 for(let i=0;i< startbutton.length;i++){
     startbutton[i].addEventListener('click',function(){
@@ -101,11 +102,11 @@ for(let i=0;i< startbutton.length;i++){
     count = 0;
     clearTd();
     green.innerText = `you found 💎:${count}`;
-    red.innerText = `you found 💣:${redcount}`;
+    red.innerText = `you found 💣:${redcount} `;
     // TIMER START
         setTimeout(function() {
             bgred.innerText = `${redcount}`
-            bggren.innerText = `${count}`
+            bggren.innerText = `${count} / ${k}`
             bg.classList.add('active');
             div.classList.add('active');
             bgtop.classList.add('active');
@@ -113,7 +114,7 @@ for(let i=0;i< startbutton.length;i++){
             starttext.classList.remove('active');
         }, 20000);
     // TIMER END
-        n=15
+        n=20
     // INTERVAL START
       var intervalId =  setInterval(function() {
             if(n>0){
@@ -125,6 +126,16 @@ for(let i=0;i< startbutton.length;i++){
         }, 1000);
     })
     // INTERVAL END
+}
+
+if(count ===  k){
+        bgred.innerText = `${redcount}`
+        bggren.innerText = `${count}`
+        bg.classList.add('active');
+        div.classList.add('active');
+        bgtop.classList.add('active');
+        bgbottom.classList.add('active');
+        starttext.classList.remove('active');
 }
 
 
